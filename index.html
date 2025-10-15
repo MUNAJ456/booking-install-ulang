@@ -1,0 +1,314 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jasa Install Ulang Profesional | Booking Cepat</title>
+
+    <style>
+        /* ==================================== */
+        /* 1. RESET DAN TATA LETAK DASAR */
+        /* ==================================== */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f2f5;
+            color: #333;
+            line-height: 1.6;
+            /* GANTI URL INI DENGAN GAMBAR ANDA */
+            background-image: url('https://via.placeholder.com/1920x1080/003366/FFFFFF?text=Aksesoris+Komputer+Background');
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        /* CONTAINER UTAMA (Menjamin konten terlihat di atas background) */
+        .main-content {
+            background-color: rgba(255, 255, 255, 0.95);
+            max-width: 900px;
+            margin: 20px auto;
+            border-radius: 12px;
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+        }
+
+        section {
+            padding: 20px;
+            text-align: center;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        h2 {
+            color: #ff6600; /* Oranye Terang/Aksentuasi */
+            border-bottom: 2px solid #ff6600;
+            padding-bottom: 5px;
+            display: inline-block;
+            margin-bottom: 25px;
+        }
+
+        /* ==================================== */
+        /* 2. HEADER DAN FOOTER */
+        /* ==================================== */
+        header {
+            background-color: #003366; /* Biru Tua Profesional */
+            color: white;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+            margin: -20px -20px 20px -20px;
+        }
+
+        header h1 {
+            margin: 0;
+            font-size: 2.2em;
+        }
+        
+        footer {
+            background-color: #003366;
+            color: white;
+            text-align: center;
+            padding: 15px 0;
+            font-size: 0.9em;
+            border-radius: 0 0 8px 8px;
+            margin: 20px -20px -20px -20px;
+        }
+
+        /* ==================================== */
+        /* 3. BAGIAN HARGA (Sudah Center) */
+        /* ==================================== */
+        .kartu-harga {
+            background-color: #ff6600; 
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            display: block; /* Agar margin auto bekerja */
+            margin: 15px auto; /* Membuat kartu di tengah */
+            box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+            max-width: 300px; 
+            width: fit-content; /* Lebar kartu menyesuaikan konten */
+        }
+
+        .nominal-harga {
+            font-size: 1.8em; 
+            margin: 5px 0 0 0;
+            font-weight: 900;
+        }
+        
+        .label-harga {
+            font-size: 1.2em;
+            margin: 0 0 5px 0;
+            font-weight: bold;
+        }
+
+        /* ==================================== */
+        /* 4. FORMULIR BOOKING (Dirapikan) */
+        /* ==================================== */
+        .booking {
+            background-color: #f9f9f9;
+            padding: 30px;
+            border: 1px solid #ff6600;
+            border-radius: 8px;
+        }
+
+        .form-grup {
+            text-align: left;
+            margin-bottom: 20px;
+        }
+
+        .form-grup label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #003366;
+        }
+
+        .form-grup select, 
+        .form-grup input[type="text"] {
+            width: 100%;
+            padding: 12px; /* Lebih nyaman disentuh di HP */
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            box-sizing: border-box;
+            font-size: 1em;
+        }
+        
+        /* Merapikan Checkbox dan Radio Button dengan Flexbox */
+        .checkbox-grup, .radio-grup {
+            padding: 15px; 
+            background: #eee;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            display: flex; 
+            flex-direction: column;
+            gap: 10px;
+        }
+
+        .radio-grup div {
+            display: flex;
+            align-items: center;
+        }
+        
+        .radio-grup input[type="radio"],
+        .checkbox-grup input[type="checkbox"] {
+            margin-right: 10px;
+            transform: scale(1.2); /* Ukuran icon diperbesar */
+        }
+
+        .radio-grup label,
+        .checkbox-grup label {
+            font-weight: normal;
+            margin-bottom: 0;
+            display: inline;
+        }
+        
+        /* ==================================== */
+        /* 5. TOMBOL WHATSAPP */
+        /* ==================================== */
+        .tombol-wa {
+            display: inline-block;
+            background-color: #25D366; /* Hijau WhatsApp */
+            color: white;
+            padding: 15px 35px; 
+            text-decoration: none;
+            border-radius: 5px;
+            font-size: 1.2em; 
+            font-weight: bold;
+            margin-top: 30px; 
+            transition: background-color 0.3s, transform 0.1s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .tombol-wa:hover {
+            background-color: #1DA851;
+            transform: scale(1.03);
+        }
+
+        /* MEDIA QUERIES untuk HP */
+        @media (max-width: 600px) {
+            .main-content {
+                margin: 0;
+                border-radius: 0;
+            }
+            header, footer {
+                margin: 0;
+                border-radius: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<div class="main-content">
+
+    <header>
+        <h1>Jasa Install Ulang Cepat & Profesional</h1>
+        <p>Solusi Tepat untuk Performa PC/Laptop Maksimal</p>
+    </header>
+
+    <section class="harga">
+        <h2>Penawaran Spesial</h2>
+        <div class="kartu-harga">
+            <p class="label-harga">Mulai Dari</p>
+            <p class="nominal-harga">SILAKAN TANYA ADMIN</p>
+        </div>
+        <p class="catatan-harga">Harga akan ditentukan berdasarkan jenis layanan dan OS yang dipilih. Detail harga akan diinfokan Admin via WA.</p>
+    </section>
+
+    <section class="booking">
+        <h2>Formulir Booking</h2>
+        <form action="#" method="POST" id="bookingForm">
+            <div class="form-grup">
+                <label for="os">Pilih Sistem Operasi:</label>
+                <select id="os" name="os" required>
+                    <option value="">-- Pilih OS --</option>
+                    <option value="Windows 11">Windows 11</option>
+                    <option value="Windows 10">Windows 10</option>
+                    <option value="Windows 7">Windows 7</option>
+                    <option value="Linux Ubuntu">Linux (Ubuntu/Mint)</option>
+                    <option value="Lainnya">Lainnya (Tulis di Catatan)</option>
+                </select>
+            </div>
+
+            <div class="form-grup">
+                <label>Layanan Tambahan:</label>
+                <div class="checkbox-grup">
+                    <div>
+                        <input type="checkbox" id="office" name="layanan" value="MS Office/Aplikasi Standar">
+                        <label for="office">Instalasi MS Office/Aplikasi Standar</label>
+                    </div>
+                    <div>
+                        <input type="checkbox" id="driver" name="layanan" value="Instalasi Driver Lengkap">
+                        <label for="driver">Instalasi Driver Lengkap</label>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-grup">
+                <label>Pilih Metode Pembayaran:</label>
+                <div class="radio-grup">
+                    <div>
+                        <input type="radio" id="tunai" name="pembayaran" value="Tunai/COD" required>
+                        <label for="tunai">Bayar Tunai / COD</label>
+                    </div>
+                    <div>
+                        <input type="radio" id="transfer" name="pembayaran" value="Transfer Bank/E-Wallet">
+                        <label for="transfer">Transfer Bank / E-Wallet</label>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-grup">
+                <label for="nama">Nama & Nomor WA Anda:</label>
+                <input type="text" id="nama" name="nama" placeholder="Contoh: Muzakky (0812xxxxxx)" required>
+            </div>
+
+            <button type="submit" id="submitButton" class="tombol-wa">
+                Chat Admin & Konfirmasi Booking
+            </button>
+            <p style="margin-top: 10px; font-size: 0.9em; color: #ff6600;">Semua detail pembayaran dan harga akan dikonfirmasi melalui WhatsApp.</p>
+        </form>
+    </section>
+
+    <footer>
+        <p>Hubungi Kami: 08xx-xxxx-xxxx (WA) | Layanan Remote Cepat</p>
+    </footer>
+
+</div>
+
+<script>
+    document.getElementById('bookingForm').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        const os = document.getElementById('os').value;
+        const nama = document.getElementById('nama').value;
+        const pembayaranInput = document.querySelector('input[name="pembayaran"]:checked');
+        const pembayaran = pembayaranInput ? pembayaranInput.value : 'Belum dipilih';
+        
+        const layananChecks = document.querySelectorAll('input[name="layanan"]:checked');
+        const layanan = Array.from(layananChecks).map(cb => cb.value);
+        const layananText = layanan.length > 0 ? layanan.join(', ') : 'Tidak ada layanan tambahan';
+
+        if (!os || !nama || !pembayaranInput) { // Memastikan pembayaran telah dipilih
+            alert('Mohon lengkapi semua pilihan di formulir.');
+            return;
+        }
+
+        // 1. Buat pesan WhatsApp
+        let waMessage = `Halo Admin, saya ${nama} ingin booking jasa install ulang. \n\n*Detail Order (Harga Tanya Admin):*\n- OS yang diinginkan: ${os}\n- Layanan Tambahan: ${layananText}\n- Metode Pembayaran: ${pembayaran}\n\nMohon info detail harga, konfirmasi, dan jadwal pengerjaan. Terima kasih.`;
+        
+        // 2. Encode pesan dan nomor WA tujuan
+        const waNumber = '62812xxxxxx'; // GANTI DENGAN NOMOR WA ANDA!
+        const encodedMessage = encodeURIComponent(waMessage);
+        const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+        
+        // 3. Arahkan pengguna ke WhatsApp
+        window.open(waLink, '_blank');
+        
+        alert('Data booking Anda berhasil dikirim! Silakan lanjutkan chat di WhatsApp untuk konfirmasi harga dan proses selanjutnya.');
+    });
+</script>
+
+</body>
+</html>
