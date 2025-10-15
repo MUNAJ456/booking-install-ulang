@@ -122,6 +122,14 @@
             font-weight: bold;
             color: #003366;
         }
+        
+        /* Gaya baru untuk keterangan harga layanan tambahan */
+        .keterangan-tambahan {
+            font-weight: normal; 
+            color: #ff6600; 
+            font-size: 0.9em;
+            margin-left: 10px;
+        }
 
         .form-grup select, 
         .form-grup input[type="text"] {
@@ -232,15 +240,15 @@
             </div>
 
             <div class="form-grup">
-                <label>Layanan Tambahan:</label>
+                <label>Layanan Tambahan: <span class="keterangan-tambahan">(+Rp 10.000/item)</span></label>
                 <div class="checkbox-grup">
                     <div>
-                        <input type="checkbox" id="office" name="layanan" value="MS Office/Aplikasi Standar">
-                        <label for="office">Instalasi MS Office/Aplikasi Standar</label>
+                        <input type="checkbox" id="office" name="layanan" value="MS Office/Aplikasi Standar (+10k)">
+                        <label for="office">Instalasi MS Office & Aplikasi Standar</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="driver" name="layanan" value="Instalasi Driver Lengkap">
-                        <label for="driver">Instalasi Driver Lengkap</label>
+                        <input type="checkbox" id="driver" name="layanan" value="Instalasi Driver Lengkap (+10k)">
+                        <label for="driver">Instalasi Driver Lengkap (Wajib)</label>
                     </div>
                 </div>
             </div>
@@ -299,7 +307,7 @@
         let waMessage = `Halo Admin, saya ${nama} ingin booking jasa install ulang. \n\n*Detail Order (Harga Tanya Admin):*\n- OS yang diinginkan: ${os}\n- Layanan Tambahan: ${layananText}\n- Metode Pembayaran: ${pembayaran}\n\nMohon info detail harga, konfirmasi, dan jadwal pengerjaan. Terima kasih.`;
         
         // 2. Encode pesan dan nomor WA tujuan
-        const waNumber = '62812xxxxxx'; // GANTI DENGAN NOMOR WA ANDA!
+        const waNumber = '6281277066306'; // NOMOR WA BARU: 081277066306
         const encodedMessage = encodeURIComponent(waMessage);
         const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
         
