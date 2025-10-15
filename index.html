@@ -16,13 +16,12 @@
             background-color: #f0f2f5;
             color: #333;
             line-height: 1.6;
-            /* GANTI URL INI DENGAN GAMBAR BERTEMA TEKNOLOGI YANG MENARIK */
+            /* Latar Belakang Tetap */
             background-image: url('https://images.unsplash.com/photo-1544376788-b12e3e7f4cb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-attachment: fixed;
             background-position: center;
-            /* Transisi untuk perubahan warna body yang mulus */
-            transition: background-color 0.5s ease;
+            /* TRANSISI DIHAPUS */
         }
 
         /* CONTAINER UTAMA (Menjamin konten terlihat di atas background) */
@@ -209,23 +208,7 @@
             box-shadow: 0 6px 15px rgba(37, 211, 102, 0.7);
         }
         
-        /* Gaya Tombol Pengubah Warna Baru */
-        #changeColorButton {
-            background-color: #8A2BE2; /* Biru Ungu */
-            color: white;
-            padding: 10px 20px;
-            font-size: 1em;
-            border: none;
-            border-radius: 50px;
-            cursor: pointer;
-            margin-top: 20px;
-            transition: background-color 0.3s, transform 0.2s;
-        }
-        
-        #changeColorButton:hover {
-            background-color: #6A1BAA;
-            transform: scale(1.05);
-        }
+        /* GAYA TOMBOL PENGUBAH WARNA DIHAPUS */
 
         /* KEYFRAMES */
         @keyframes pulse {
@@ -331,10 +314,7 @@
             </button>
             <p style="margin-top: 10px; font-size: 0.9em; color: #ff6600;">Semua detail pembayaran dan harga akan dikonfirmasi melalui WhatsApp.</p>
             
-            <button type="button" id="changeColorButton">
-                Ubah Warna Latar Belakang (Coba!)
-            </button>
-        </form>
+            </form>
     </section>
 
     <footer>
@@ -348,7 +328,7 @@
 
 <script>
     // ====================================
-    // 1. Logika Booking WA
+    // Logika Booking WA (Tetap Ada)
     // ====================================
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
@@ -386,21 +366,9 @@
         alert('Data booking Anda berhasil dikirim! Kami akan mencoba menghubungi Anda melalui kedua nomor WhatsApp yang tersedia. Silakan cek jendela/tab baru Anda untuk melanjutkan chat.');
     });
 
-
     // ====================================
-    // 2. Logika Pengubah Warna Latar Belakang (Dari Kode Baru)
+    // Logika Pengubah Warna Latar Belakang DIHAPUS
     // ====================================
-    document.getElementById("changeColorButton").addEventListener("click", function() {
-        const colors = ["#FF5733", "#33FF57", "#3357FF", "#F4F4F4", "#FFC300", "#FF69B4", "#40E0D0"]; // Menambah 2 warna baru
-        const randomColor = colors[Math.floor(Math.random() * colors.length)];
-        // Mengubah warna latar belakang body utama (bukan background-image)
-        document.body.style.backgroundColor = randomColor; 
-        
-        // Opsional: Untuk melihat efek lebih jelas, kita bisa hapus background image sementara
-        // document.body.style.backgroundImage = 'none';
-        
-        // Opsional: Jika Anda ingin warna latar belakang kembali normal setelah diubah, Anda perlu menambahkan logika reset.
-    });
 </script>
 
 </body>
