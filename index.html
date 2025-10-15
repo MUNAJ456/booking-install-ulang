@@ -16,19 +16,22 @@
             background-color: #f0f2f5;
             color: #333;
             line-height: 1.6;
-            /* GANTI URL INI DENGAN GAMBAR ANDA */
-            background-image: url('https://via.placeholder.com/1920x1080/003366/FFFFFF?text=Aksesoris+Komputer+Background');
+            /* GANTI URL INI DENGAN GAMBAR BERTEMA TEKNOLOGI YANG MENARIK */
+            background-image: url('https://images.unsplash.com/photo-1544376788-b12e3e7f4cb6?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1920&q=80');
             background-size: cover;
             background-attachment: fixed;
+            background-position: center;
+            /* Transisi untuk perubahan warna body yang mulus */
+            transition: background-color 0.5s ease;
         }
 
         /* CONTAINER UTAMA (Menjamin konten terlihat di atas background) */
         .main-content {
-            background-color: rgba(255, 255, 255, 0.95);
+            background-color: rgba(255, 255, 255, 0.98);
             max-width: 900px;
             margin: 20px auto;
             border-radius: 12px;
-            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
             padding: 20px;
         }
 
@@ -45,6 +48,7 @@
             padding-bottom: 5px;
             display: inline-block;
             margin-bottom: 25px;
+            font-size: 1.8em;
         }
 
         /* ==================================== */
@@ -57,11 +61,13 @@
             text-align: center;
             border-radius: 8px 8px 0 0;
             margin: -20px -20px 20px -20px;
+            animation: slideIn 1s ease-out;
         }
 
         header h1 {
             margin: 0;
-            font-size: 2.2em;
+            font-size: 2.5em; 
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
         }
         
         footer {
@@ -74,41 +80,56 @@
             margin: 20px -20px -20px -20px;
         }
 
+        /* Gaya Tautan di Footer */
+        footer a {
+            color: #ffcc00; /* Warna kuning untuk menonjolkan tautan WA */
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s;
+        }
+
+        footer a:hover {
+            color: white;
+        }
+
         /* ==================================== */
-        /* 3. BAGIAN HARGA (Sudah Center) */
+        /* 3. BAGIAN HARGA */
         /* ==================================== */
         .kartu-harga {
             background-color: #ff6600; 
             color: white;
             padding: 25px;
             border-radius: 10px;
-            display: block; /* Agar margin auto bekerja */
-            margin: 15px auto; /* Membuat kartu di tengah */
-            box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4);
+            display: block; 
+            margin: 15px auto; 
+            box-shadow: 0 8px 20px rgba(255, 102, 0, 0.5); 
             max-width: 300px; 
-            width: fit-content; /* Lebar kartu menyesuaikan konten */
+            width: fit-content; 
+            transform: scale(1.05);
+            animation: pulse 2s infinite;
         }
 
         .nominal-harga {
-            font-size: 1.8em; 
+            font-size: 2.2em;
             margin: 5px 0 0 0;
             font-weight: 900;
         }
         
         .label-harga {
-            font-size: 1.2em;
+            font-size: 1.3em;
             margin: 0 0 5px 0;
             font-weight: bold;
         }
 
         /* ==================================== */
-        /* 4. FORMULIR BOOKING (Dirapikan) */
+        /* 4. FORMULIR BOOKING */
         /* ==================================== */
         .booking {
-            background-color: #f9f9f9;
+            background-color: #ffffff;
             padding: 30px;
-            border: 1px solid #ff6600;
+            border: 2px solid #003366;
             border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0, 51, 102, 0.1);
         }
 
         .form-grup {
@@ -126,40 +147,41 @@
         .form-grup select, 
         .form-grup input[type="text"] {
             width: 100%;
-            padding: 12px; /* Lebih nyaman disentuh di HP */
-            border: 1px solid #ccc;
+            padding: 12px; 
+            border: 1px solid #003366;
             border-radius: 5px;
             box-sizing: border-box;
             font-size: 1em;
+            transition: border-color 0.3s;
+        }
+
+        .form-grup select:focus, 
+        .form-grup input[type="text"]:focus {
+            border-color: #ff6600;
+            outline: none;
         }
         
-        /* Merapikan Checkbox dan Radio Button dengan Flexbox */
         .checkbox-grup, .radio-grup {
             padding: 15px; 
-            background: #eee;
+            background: #e6f0ff;
             border-radius: 5px;
-            border: 1px solid #ddd;
+            border: 1px solid #b3ccff;
             display: flex; 
             flex-direction: column;
             gap: 10px;
         }
 
-        .radio-grup div {
+        .radio-grup div, .checkbox-grup div {
             display: flex;
             align-items: center;
         }
         
-        .radio-grup input[type="radio"],
-        .checkbox-grup input[type="checkbox"] {
-            margin-right: 10px;
-            transform: scale(1.2); /* Ukuran icon diperbesar */
-        }
-
         .radio-grup label,
         .checkbox-grup label {
             font-weight: normal;
             margin-bottom: 0;
             display: inline;
+            color: #333;
         }
         
         /* ==================================== */
@@ -171,19 +193,52 @@
             color: white;
             padding: 15px 35px; 
             text-decoration: none;
-            border-radius: 5px;
-            font-size: 1.2em; 
+            border-radius: 50px;
+            font-size: 1.3em; 
             font-weight: bold;
             margin-top: 30px; 
-            transition: background-color 0.3s, transform 0.1s;
+            transition: background-color 0.3s, transform 0.2s, box-shadow 0.3s;
             border: none;
             cursor: pointer;
+            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.5);
         }
 
         .tombol-wa:hover {
             background-color: #1DA851;
-            transform: scale(1.03);
+            transform: scale(1.05);
+            box-shadow: 0 6px 15px rgba(37, 211, 102, 0.7);
         }
+        
+        /* Gaya Tombol Pengubah Warna Baru */
+        #changeColorButton {
+            background-color: #8A2BE2; /* Biru Ungu */
+            color: white;
+            padding: 10px 20px;
+            font-size: 1em;
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            margin-top: 20px;
+            transition: background-color 0.3s, transform 0.2s;
+        }
+        
+        #changeColorButton:hover {
+            background-color: #6A1BAA;
+            transform: scale(1.05);
+        }
+
+        /* KEYFRAMES */
+        @keyframes pulse {
+            0% { box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4); }
+            50% { box-shadow: 0 6px 20px rgba(255, 102, 0, 0.7); }
+            100% { box-shadow: 0 6px 15px rgba(255, 102, 0, 0.4); }
+        }
+        
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
 
         /* MEDIA QUERIES untuk HP */
         @media (max-width: 600px) {
@@ -195,6 +250,13 @@
                 margin: 0;
                 border-radius: 0;
             }
+            header h1 {
+                font-size: 2em;
+            }
+            .tombol-wa {
+                padding: 15px 25px;
+                font-size: 1.1em;
+            }
         }
     </style>
 </head>
@@ -203,12 +265,12 @@
 <div class="main-content">
 
     <header>
-        <h1>Jasa Install Ulang Cepat & Profesional</h1>
+        <h1>Jasa Install Ulang Cepat & Profesional 💻🚀</h1>
         <p>Solusi Tepat untuk Performa PC/Laptop Maksimal</p>
     </header>
 
     <section class="harga">
-        <h2>Penawaran Spesial</h2>
+        <h2>Penawaran Spesial ✨</h2>
         <div class="kartu-harga">
             <p class="label-harga">Mulai Dari</p>
             <p class="nominal-harga">SILAKAN TANYA ADMIN</p>
@@ -217,7 +279,7 @@
     </section>
 
     <section class="booking">
-        <h2>Formulir Booking</h2>
+        <h2>Formulir Booking Cepat ✅</h2>
         <form action="#" method="POST" id="bookingForm">
             <div class="form-grup">
                 <label for="os">Pilih Sistem Operasi:</label>
@@ -250,7 +312,7 @@
                 <div class="radio-grup">
                     <div>
                         <input type="radio" id="tunai" name="pembayaran" value="Tunai/COD" required>
-                        <label for="tunai">Bayar Tunai / COD</label>
+                         <label for="tunai">Bayar Tunai / COD</label>
                     </div>
                     <div>
                         <input type="radio" id="transfer" name="pembayaran" value="Transfer Bank/E-Wallet">
@@ -265,19 +327,29 @@
             </div>
 
             <button type="submit" id="submitButton" class="tombol-wa">
-                Chat Admin & Konfirmasi Booking
+                📲 Chat Admin & Konfirmasi Booking
             </button>
             <p style="margin-top: 10px; font-size: 0.9em; color: #ff6600;">Semua detail pembayaran dan harga akan dikonfirmasi melalui WhatsApp.</p>
+            
+            <button type="button" id="changeColorButton">
+                Ubah Warna Latar Belakang (Coba!)
+            </button>
         </form>
     </section>
 
     <footer>
-        <p>Hubungi Kami: 0895-xxxx-xxxx atau 0812-xxxx-xxxx (WA) | Layanan Remote Cepat</p>
+        <p>Hubungi Kami: 
+            <a href="https://wa.me/6289523371891" target="_blank">0895-2337-1891</a> atau 
+            <a href="https://wa.me/6281277066306" target="_blank">0812-7706-6306</a> (WA) | Layanan Remote Cepat
+        </p>
     </footer>
 
 </div>
 
 <script>
+    // ====================================
+    // 1. Logika Booking WA
+    // ====================================
     document.getElementById('bookingForm').addEventListener('submit', function(e) {
         e.preventDefault();
         
@@ -287,7 +359,7 @@
         const pembayaran = pembayaranInput ? pembayaranInput.value : 'Belum dipilih';
         
         const layananChecks = document.querySelectorAll('input[name="layanan"]:checked');
-        const layanan = Array.from(layananChecks).map(cb => cb.value + ' (+10k)'); // Tambahkan +10k per item
+        const layanan = Array.from(layananChecks).map(cb => cb.value + ' (+10k)'); 
         const layananText = layanan.length > 0 ? layanan.join(', ') : 'Tidak ada layanan tambahan';
 
         if (!os || !nama || !pembayaranInput) { 
@@ -295,30 +367,39 @@
             return;
         }
 
-        // 1. Buat pesan WhatsApp
+        // Buat pesan WhatsApp
         let waMessage = `Halo Admin, saya ${nama} ingin booking jasa install ulang. \n\n*Detail Order (Harga Tanya Admin):*\n- OS yang diinginkan: ${os}\n- Layanan Tambahan: ${layananText}\n- Metode Pembayaran: ${pembayaran}\n\nMohon info detail harga, konfirmasi, dan jadwal pengerjaan. Terima kasih.`;
         
-        // 2. Encode pesan
         const encodedMessage = encodeURIComponent(waMessage);
 
-        // 3. Nomor WA tujuan yang diminta
         const waNumbers = [
-            '6289523371891', // Nomor Pertama
-            '6281277066306'  // Nomor Kedua
+            '6289523371891', 
+            '6281277066306' 
         ];
 
-        // 4. Buka tab baru untuk setiap nomor
+        // Buka tab baru untuk setiap nomor
         waNumbers.forEach((number, index) => {
             const waLink = `https://wa.me/${number}?text=${encodedMessage}`;
-            // Membuka tab baru untuk nomor pertama.
-            // Untuk nomor kedua, kebanyakan browser akan memblokirnya sebagai pop-up.
-            // Pengiriman ke dua nomor sekaligus biasanya tidak disarankan untuk pengalaman pengguna yang baik.
-            // Namun, karena ini adalah permintaan, kita akan mencoba.
             window.open(waLink, '_blank');
         });
         
-        // 5. Notifikasi ke pengguna
         alert('Data booking Anda berhasil dikirim! Kami akan mencoba menghubungi Anda melalui kedua nomor WhatsApp yang tersedia. Silakan cek jendela/tab baru Anda untuk melanjutkan chat.');
+    });
+
+
+    // ====================================
+    // 2. Logika Pengubah Warna Latar Belakang (Dari Kode Baru)
+    // ====================================
+    document.getElementById("changeColorButton").addEventListener("click", function() {
+        const colors = ["#FF5733", "#33FF57", "#3357FF", "#F4F4F4", "#FFC300", "#FF69B4", "#40E0D0"]; // Menambah 2 warna baru
+        const randomColor = colors[Math.floor(Math.random() * colors.length)];
+        // Mengubah warna latar belakang body utama (bukan background-image)
+        document.body.style.backgroundColor = randomColor; 
+        
+        // Opsional: Untuk melihat efek lebih jelas, kita bisa hapus background image sementara
+        // document.body.style.backgroundImage = 'none';
+        
+        // Opsional: Jika Anda ingin warna latar belakang kembali normal setelah diubah, Anda perlu menambahkan logika reset.
     });
 </script>
 
