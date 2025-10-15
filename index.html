@@ -122,14 +122,6 @@
             font-weight: bold;
             color: #003366;
         }
-        
-        /* Gaya baru untuk keterangan harga layanan tambahan */
-        .keterangan-tambahan {
-            font-weight: normal; 
-            color: #ff6600; 
-            font-size: 0.9em;
-            margin-left: 10px;
-        }
 
         .form-grup select, 
         .form-grup input[type="text"] {
@@ -240,15 +232,15 @@
             </div>
 
             <div class="form-grup">
-                <label>Layanan Tambahan: <span class="keterangan-tambahan">(+Rp 10.000/item)</span></label>
+                <label>Layanan Tambahan (+10k per item):</label>
                 <div class="checkbox-grup">
                     <div>
-                        <input type="checkbox" id="office" name="layanan" value="MS Office/Aplikasi Standar (+10k)">
-                        <label for="office">Instalasi MS Office & Aplikasi Standar</label>
+                        <input type="checkbox" id="office" name="layanan" value="MS Office/Aplikasi Standar">
+                        <label for="office">Instalasi MS Office/Aplikasi Standar</label>
                     </div>
                     <div>
-                        <input type="checkbox" id="driver" name="layanan" value="Instalasi Driver Lengkap (+10k)">
-                        <label for="driver">Instalasi Driver Lengkap (Wajib)</label>
+                        <input type="checkbox" id="driver" name="layanan" value="Instalasi Driver Lengkap">
+                        <label for="driver">Instalasi Driver Lengkap</label>
                     </div>
                 </div>
             </div>
@@ -280,7 +272,7 @@
     </section>
 
     <footer>
-        <p>Hubungi Kami: 08xx-xxxx-xxxx (WA) | Layanan Remote Cepat</p>
+        <p>Hubungi Kami: 0895-xxxx-xxxx atau 0812-xxxx-xxxx (WA) | Layanan Remote Cepat</p>
     </footer>
 
 </div>
@@ -295,10 +287,10 @@
         const pembayaran = pembayaranInput ? pembayaranInput.value : 'Belum dipilih';
         
         const layananChecks = document.querySelectorAll('input[name="layanan"]:checked');
-        const layanan = Array.from(layananChecks).map(cb => cb.value);
+        const layanan = Array.from(layananChecks).map(cb => cb.value + ' (+10k)'); // Tambahkan +10k per item
         const layananText = layanan.length > 0 ? layanan.join(', ') : 'Tidak ada layanan tambahan';
 
-        if (!os || !nama || !pembayaranInput) { // Memastikan pembayaran telah dipilih
+        if (!os || !nama || !pembayaranInput) { 
             alert('Mohon lengkapi semua pilihan di formulir.');
             return;
         }
@@ -306,15 +298,27 @@
         // 1. Buat pesan WhatsApp
         let waMessage = `Halo Admin, saya ${nama} ingin booking jasa install ulang. \n\n*Detail Order (Harga Tanya Admin):*\n- OS yang diinginkan: ${os}\n- Layanan Tambahan: ${layananText}\n- Metode Pembayaran: ${pembayaran}\n\nMohon info detail harga, konfirmasi, dan jadwal pengerjaan. Terima kasih.`;
         
-        // 2. Encode pesan dan nomor WA tujuan
-        const waNumber = '6281277066306'; // NOMOR WA BARU: 081277066306
+        // 2. Encode pesan
         const encodedMessage = encodeURIComponent(waMessage);
-        const waLink = `https://wa.me/${waNumber}?text=${encodedMessage}`;
+
+        // 3. Nomor WA tujuan yang diminta
+        const waNumbers = [
+            '6289523371891', // Nomor Pertama
+            '6281277066306'  // Nomor Kedua
+        ];
+
+        // 4. Buka tab baru untuk setiap nomor
+        waNumbers.forEach((number, index) => {
+            const waLink = `https://wa.me/${number}?text=${encodedMessage}`;
+            // Membuka tab baru untuk nomor pertama.
+            // Untuk nomor kedua, kebanyakan browser akan memblokirnya sebagai pop-up.
+            // Pengiriman ke dua nomor sekaligus biasanya tidak disarankan untuk pengalaman pengguna yang baik.
+            // Namun, karena ini adalah permintaan, kita akan mencoba.
+            window.open(waLink, '_blank');
+        });
         
-        // 3. Arahkan pengguna ke WhatsApp
-        window.open(waLink, '_blank');
-        
-        alert('Data booking Anda berhasil dikirim! Silakan lanjutkan chat di WhatsApp untuk konfirmasi harga dan proses selanjutnya.');
+        // 5. Notifikasi ke pengguna
+        alert('Data booking Anda berhasil dikirim! Kami akan mencoba menghubungi Anda melalui kedua nomor WhatsApp yang tersedia. Silakan cek jendela/tab baru Anda untuk melanjutkan chat.');
     });
 </script>
 
